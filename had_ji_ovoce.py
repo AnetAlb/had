@@ -52,19 +52,28 @@ def pohyb(souradnice):
             zmena=druha_pozice+1
             souradnice.append((prvni_pozice, zmena))
 
-        #print(souradnice)
-        #navraci do tabulku . na mista odkud se hnul had
-        nulta_pozice=souradnice[0][0]
-        #print(nulta_pozice)
-        nulta_pozice_b=souradnice[0][1]
-        #print(nulta_pozice_b)
-        tabulka[nulta_pozice_b][nulta_pozice ] = '.'
-        #print(tabulka)
-        print(souradnice)
-        souradnice.pop(0)
-        print(souradnice)
-        print(souradnice[0])
-        print(souradnice[2])
+        #ovoce
+        souradnice_ovoce = [(2, 3)]
+        for pozice_ovoce in souradnice_ovoce:
+            sloupec_ovoce = pozice_ovoce[0]
+            radek_ovoce = pozice_ovoce[1]
+            tabulka[radek_ovoce][sloupec_ovoce] = '@'
+
+
+        if souradnice[-1] not in souradnice_ovoce:
+            #print(souradnice)
+            #navraci do tabulku . na mista odkud se hnul had
+            nulta_pozice=souradnice[0][0]
+            #print(nulta_pozice)
+            nulta_pozice_b=souradnice[0][1]
+            #print(nulta_pozice_b)
+            tabulka[nulta_pozice_b][nulta_pozice ] = '.'
+            #print(tabulka)
+            print(souradnice)
+            souradnice.pop(0)
+            print(souradnice)
+            #print(souradnice[0])
+            print(souradnice[2])
         #print(tabulka)
         #return(souradnice)
         #pohyb(souradnice)
@@ -79,6 +88,9 @@ def pohyb(souradnice):
         #had nesmi hrat nesmi vyjet z pole
         if (souradnice[-1][0] in [-1,10]) or (souradnice[-1][1] in [-1,10]):
             raise IndexError("Chyba2")
+
+
+
 
         for tup in souradnice:
             #print(tup)
